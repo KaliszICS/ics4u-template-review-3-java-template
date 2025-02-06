@@ -31,11 +31,11 @@ public class PracticeProblem {
 	}
 
 	public static void q6() {
-		//Write question 5 code here
+		//Write question 6 code here
 	}
 
 	public static void q7() {
-		//Write question 5 code here
+		//Write question 7 code here
 	}
 
 }
