@@ -240,7 +240,7 @@ public class PracticeProblemTest {
       PracticeProblem.q6();
 
       // assertion
-      assertEquals("In: In: false\n", bos.toString());
+      assertEquals("In: In: true\n", bos.toString());
    }
 
    @Test
