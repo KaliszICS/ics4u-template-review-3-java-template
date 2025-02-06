@@ -4,46 +4,285 @@ import java.io.*;
 
 public class PracticeProblemTest {
 
-   @Test
-   public void testOutput()
-   {
-     PrintStream originalOut = System.out;
-     ByteArrayOutputStream bos = new ByteArrayOutputStream();
-     System.setOut(new PrintStream(bos));
+   InputStream originalIn = System.in;
+   PrintStream originalOut = System.out;
+   ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
-     // action
-     PracticeProblem.q1();
-
-     // assertion
-     assertEquals("There once was a man from St. Ives.\n", bos.toString());
-
-     // undo the binding in System
-     System.setOut(originalOut);
+   @BeforeEach
+   public void setUp() {
+      System.setOut(new PrintStream(bos));
    }
 
+   @AfterEach
+   public void tearDown() {
+      System.setOut(originalOut);
+      System.setIn(originalIn);
+   }
+   
    @Test
-   public void testInputandOutput()
+   public void testQ1_1()
    {
-      String data = "Users Input";
+     InputStream originalIn = System.in;
+      String data = "Hello";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
-      
-      PrintStream originalOut = System.out;
-      ByteArrayOutputStream bos = new ByteArrayOutputStream();
-      System.setOut(new PrintStream(bos));
 
       // action
       PracticeProblem.q1();
 
       // assertion
-      assertEquals("There once was a man from St. Ives.\n", bos.toString());
+      assertEquals("In: H\n", bos.toString());
+   }
 
-      // undo the binding in System
-      System.setOut(originalOut);
+    @Test
+   public void testQ1_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "Bye";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q1();
+
+      // assertion
+      assertEquals("In: B\n", bos.toString());
+   }
+
+    @Test
+   public void testQ2_1()
+   {
+     InputStream originalIn = System.in;
+      String data = "true";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q2();
+
+      // assertion
+      assertEquals("In: false\n", bos.toString());
+   }
+
+    @Test
+   public void testQ2_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "false";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q2();
+
+      // assertion
+      assertEquals("In: true\n", bos.toString());
+   }
+
+    @Test
+   public void testQ3_1()
+   {
+     InputStream originalIn = System.in;
+      String data = "6";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q3();
+
+      // assertion
+      assertEquals("In: true\n", bos.toString());
+   }
+
+    @Test
+   public void testQ3_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "-5";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q3();
+
+      // assertion
+      assertEquals("In: false\n", bos.toString());
+   }
+
+    @Test
+   public void testQ4_1()
+   {
+     InputStream originalIn = System.in;
+      String data = "2";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q4();
+
+      // assertion
+      assertEquals("In: true\n", bos.toString());
+   }
+
+    @Test
+   public void testQ4_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "-2";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q4();
+
+      // assertion
+      assertEquals("In: true\n", bos.toString());
+   }
+
+    @Test
+   public void testQ4_3()
+   {
+     InputStream originalIn = System.in;
+      String data = "0";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q4();
+
+      // assertion
+      assertEquals("In: true\n", bos.toString());
+   }
+
+    @Test
+   public void testQ4_4()
+   {
+     InputStream originalIn = System.in;
+      String data = "23";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q4();
+
+      // assertion
+      assertEquals("In: false\n", bos.toString());
+   }
+
+    @Test
+   public void testQ4_5()
+   {
+     InputStream originalIn = System.in;
+      String data = "-4";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q4();
+
+      // assertion
+      assertEquals("In: false\n", bos.toString());
+   }
+
+    @Test
+   public void testQ5_1()
+   {
+     InputStream originalIn = System.in;
+      String data = "Hello World";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q5();
+
+      // assertion
+      assertEquals("In: true\n", bos.toString());
+   }
+
+    @Test
+   public void testQ5_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "hello world";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q5();
+
+      // assertion
+      assertEquals("In: false\n", bos.toString());
+   }
+
+    @Test
+   public void testQ6_1()
+   {
+     InputStream originalIn = System.in;
+      String data = "-2\n0\n";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q6();
+
+      // assertion
+      assertEquals("In: In: true\n", bos.toString());
+   }
+
+    @Test
+   public void testQ6_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "34\n5\n";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q6();
+
+      // assertion
+      assertEquals("In: In: false\n", bos.toString());
+   }
+
+    @Test
+   public void testQ6_3()
+   {
+     InputStream originalIn = System.in;
+      String data = "3\n3\n";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q6();
+
+      // assertion
+      assertEquals("In: In: false\n", bos.toString());
    }
 
    @Test
-   public void testQ3()
+   public void testQ7_1()
    {
-     
+     InputStream originalIn = System.in;
+      String data = "3\n3\n";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q7();
+
+      // assertion
+      assertEquals("In: In: false\n", bos.toString());
    }
+
+   @Test
+   public void testQ7_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "4\n3\n";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q7();
+
+      // assertion
+      assertEquals("In: In: true\n", bos.toString());
+   }
+
+   @Test
+   public void testQ7_2()
+   {
+     InputStream originalIn = System.in;
+      String data = "4\n5\n";
+      System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+      // action
+      PracticeProblem.q7();
+
+      // assertion
+      assertEquals("In: In: false\n", bos.toString());
+   }
+   
 }
