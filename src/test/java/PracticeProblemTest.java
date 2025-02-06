@@ -272,7 +272,7 @@ public class PracticeProblemTest {
    }
 
    @Test
-   public void testQ7_2()
+   public void testQ7_3()
    {
      InputStream originalIn = System.in;
       String data = "4\n5\n";
