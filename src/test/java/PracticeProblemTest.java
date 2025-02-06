@@ -51,7 +51,7 @@ public class PracticeProblemTest {
    public void testQ2_1()
    {
      InputStream originalIn = System.in;
-      String data = "true";
+      String data = "true\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -65,7 +65,7 @@ public class PracticeProblemTest {
    public void testQ2_2()
    {
      InputStream originalIn = System.in;
-      String data = "false";
+      String data = "false\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -79,7 +79,7 @@ public class PracticeProblemTest {
    public void testQ3_1()
    {
      InputStream originalIn = System.in;
-      String data = "6";
+      String data = "6\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -93,7 +93,7 @@ public class PracticeProblemTest {
    public void testQ3_2()
    {
      InputStream originalIn = System.in;
-      String data = "-5";
+      String data = "-5\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -107,7 +107,7 @@ public class PracticeProblemTest {
    public void testQ4_1()
    {
      InputStream originalIn = System.in;
-      String data = "2";
+      String data = "2\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -121,7 +121,7 @@ public class PracticeProblemTest {
    public void testQ4_2()
    {
      InputStream originalIn = System.in;
-      String data = "-2";
+      String data = "-2\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -135,7 +135,7 @@ public class PracticeProblemTest {
    public void testQ4_3()
    {
      InputStream originalIn = System.in;
-      String data = "0";
+      String data = "0\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -149,7 +149,7 @@ public class PracticeProblemTest {
    public void testQ4_4()
    {
      InputStream originalIn = System.in;
-      String data = "23";
+      String data = "23\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
@@ -163,7 +163,7 @@ public class PracticeProblemTest {
    public void testQ4_5()
    {
      InputStream originalIn = System.in;
-      String data = "-4";
+      String data = "-4\n";
       System.setIn(new ByteArrayInputStream(data.getBytes()));
 
       // action
